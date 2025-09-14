@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.form{
+background-color: gray;
+height: 350px;
+width: 30%;
+display: flex;
+flex-direction: column;
+padding: 30px;
+margin: 0% auto;
+
+border-radius: 20px;
+}
+h1{
+    text-align: center;
+    margin-top: -8px;
+    font-size: 40px;
+}
+.textarea{
+    height: 100px;
+    border-radius: 10px;
+}
+.replace{
+    margin-top: 20px;
+    height: 25px;
+    border-radius: 4px;
+}
+.submit{
+     margin-top: 20px;
+    height: 30px;
+    border-radius: 4px;
+}
+    </style>
+</head>
+<body>
+<div class="form">
+<h1>Replace Content</h1>
+<textarea id="content" placeholder="Content" class="textarea"></textarea>
+<input type="text" id="change" placeholder="Find" class="replace">
+<input type="text" id="replace" placeholder="Replace" class="replace">
+<button type="submit" onclick="submit()" class="submit">submit</button>
+</div>
+<p id="result"></p>
+
+</body>
+</html>
+
+
+<script>
+function submit () {
+    let content = document.getElementById("content").value;
+    let change = document.getElementById("change").value;
+    let replace = document.getElementById("replace").value;
+    let r1= content.replaceAll(change, replace);
+    let result = document.getElementById("result").innerText=r1;
+    console.log(r1);
+}
+
+
+</script>
